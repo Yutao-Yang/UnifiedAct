@@ -22,7 +22,7 @@ git clone https://github.com/Yutao-Yang/UnifiedAct.git /你的目录/UnifiedAct
 cd /你的目录/UnifiedAct
 git config --local user.name "你的姓名"
 git config --local user.email "你的 GitHub 已验证邮箱或 noreply 邮箱"
-git switch -c yourname/topic
+git checkout -b yourname/topic
 ```
 
 若两人共用服务器系统账号，工作目录仍需分开；不能共用提交身份。认证凭据也可能由同一系统账号共享，需要另行配置个人认证。
@@ -33,7 +33,7 @@ git switch -c yourname/topic
 git status --short --branch
 git fetch origin
 # 开始新任务时，从最新 main 建个人分支
-git switch -c yourname/new-topic origin/main
+git checkout -b yourname/new-topic origin/main
 
 # 修改后，先检查全部差异，并运行与改动相关的测试
 git diff --check
@@ -77,7 +77,7 @@ git push -u origin yourname/new-topic
 cd /project/fileset/xts0083/public/UnifiedAct
 git status --short  # 必须先确认干净；有改动就停下联系其作者
 git fetch origin
-git switch main
+git checkout main
 git pull --ff-only origin main
 git diff --stat main...origin/yourname/new-topic
 git diff main...origin/yourname/new-topic
@@ -102,7 +102,7 @@ git remote rename origin integration
 git remote add origin https://github.com/Yutao-Yang/UnifiedAct.git
 git config --local user.name "你的姓名"
 git config --local user.email "你的邮箱"
-git switch -c yourname/topic
+git checkout -b yourname/topic
 # 完成、自查、指定文件暂存并 commit 后，告知负责人路径与 commit SHA
 git rev-parse HEAD
 ```
